@@ -70,7 +70,7 @@ export default function Compare() {
 
   return (
     <div className='p-4 lg:p-12'>
-      <div className='flex justify-between md:justify-start items-center gap-8'>
+      <div className='flex justify-between md:justify-start items-center gap-8 mb-4'>
       {(crypto1 && crypto2) && 
       <SelectCoins
       crypto1={crypto1}
@@ -79,16 +79,25 @@ export default function Compare() {
       />}
       <SelectDays days={days} handleDaysChange={handleDaysChange} noPTag={true}/>
       </div>
-      {(crypto1Data && crypto2Data) &&
-    <table className='w-full cursor-pointer'>
+      {crypto1Data &&
+    <table className='w-full cursor-pointer dark:bg-[var(--darkgrey)] bg-[#f3f3f3] mb-4 rounded-xl'>
       <tbody className='w-full'>
-        <List coin={crypto1Data} compare={true}/>
-        <List coin={crypto2Data} compare={true}/>
+        <List coin={crypto1Data}/>
       </tbody>
     </table>
       }
+
+    { crypto2Data &&
+        <table className='w-full cursor-pointer dark:bg-[var(--darkgrey)] bg-[#f3f3f3] rounded-xl'>
+          <tbody className='w-full'>
+            <List coin={crypto2Data}/>
+          </tbody>
+        </table>
+    }
+      <div className='dark:bg-[var(--darkgrey)] bg-[#f3f3f3] mt-4 rounded-xl p-4'>
       <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
       {chartData && <LineChart charData={chartData} priceType={priceType} multiAxis={true}/>}
+      </div>
       <div>
         {
           (crypto1Data && crypto2Data) &&

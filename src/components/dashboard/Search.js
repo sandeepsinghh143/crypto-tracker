@@ -6,7 +6,7 @@ export default function Search({search,onSearchChange}) {
     
 
   return (
-    <div className='flex justify-start items-center gap-6 py-4 px-6 text-[var(--grey)] bg-[var(--darkgrey)] w-[80%] m-auto rounded-[3rem] my-4'>
+    <div className='flex justify-start items-center gap-6 py-4 px-6 text-[var(--grey)] dark:bg-[var(--darkgrey)] bg-[#f3f3f3] w-[80%] m-auto rounded-[3rem] my-4'>
         <SearchRoundedIcon/>
         <input 
         type="text" 

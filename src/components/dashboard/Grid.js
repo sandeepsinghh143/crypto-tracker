@@ -9,7 +9,7 @@ import {motion} from "framer-motion"
 export default function Grid({coin,delay}) {
   
   return (
-    <motion.div className={`w-[calc(100vw-100px)] md:w-[290px] bg-[var(--darkgrey)] border-2 border-solid border-[var(--darkgrey)] rounded-lg p-8 cursor-pointer ${coin.price_change_percentage_24h > 0 ? "hover:border-[var(--green)]" : "hover:border-[var(--red)]"} hover:transition-all hover:scale-105`} 
+    <motion.div className={`w-[calc(100vw-100px)] md:w-[290px] dark:bg-[var(--darkgrey)] bg-[#f3f3f3] border-2 border-solid border-[transparent] rounded-lg p-8 cursor-pointer ${coin.price_change_percentage_24h > 0 ? "hover:border-[var(--green)]" : "hover:border-[var(--red)]"} grid-div`} 
     initial={{ opacity: 0, x: -50 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay: delay }}
@@ -27,19 +27,19 @@ export default function Grid({coin,delay}) {
       {coin.price_change_percentage_24h>0 ?
         (
           <div className='flex justify-start items-center gap-4 mt-8'>
-            <div className='border-2 border-solid border-[var(--green)] rounded-[2rem] text-center font-semibold text-[var(--green)] py-2 px-6 text-base hover:bg-[var(--green)] hover:text-[var(--white)] hover:transition-all min-w-[65px]'>+{coin.price_change_percentage_24h.toFixed(2)} %</div>
+            <div className='border-2 border-solid border-[var(--green)] rounded-[2rem] text-center font-semibold text-[var(--green)] py-[6px] px-4 text-base hover:bg-[var(--green)] hover:text-[var(--white)] hover:transition-all min-w-[65px]'>+{coin.price_change_percentage_24h.toFixed(2)} %</div>
             <div className='flex justify-center items-center border-2 border-solid border-[var(--green)] rounded-[50%] text-[var(--green)] h-10 w-10 text-base hover:bg-[var(--green)] hover:text-[var(--white)] transition-all'><TrendingUpRoundedIcon/></div>
           </div>
         )
         :
         (
           <div className='flex justify-start items-center gap-4 mt-8'>
-            <div className='border-2 border-solid border-[var(--red)] rounded-[2rem] text-center font-semibold text-[var(--red)] py-2 px-6 text-base hover:bg-[var(--red)] hover:text-[var(--white)] hover:transition-all min-w-[65px]'>{coin.price_change_percentage_24h.toFixed(2)} %</div>
+            <div className='border-2 border-solid border-[var(--red)] rounded-[2rem] text-center font-semibold text-[var(--red)] py-[6px] px-4 text-base hover:bg-[var(--red)] hover:text-[var(--white)] hover:transition-all min-w-[65px]'>{coin.price_change_percentage_24h.toFixed(2)} %</div>
             <div className='flex justify-center items-center border-2 border-solid border-[var(--red)] rounded-[50%] text-[var(--red)] h-10 w-10 text-base hover:bg-[var(--red)] hover:text-[var(--white)] transition-all'><TrendingDownRoundedIcon/></div>
           </div>
         )
       }
-      <div className='mt-8'>
+      <div className='mt-4'>
           <h3 className='text-xl font-semibold mb-4' style={{
             color:coin.price_change_percentage_24h > 0
             ? "var(--green)"

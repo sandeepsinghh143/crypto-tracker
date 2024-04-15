@@ -12,7 +12,7 @@ export default function LeftMain() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className='text-center md:text-left text-5xl md:text-7xl xl:text-9xl text-[var(--white)] font-bold left-heading mt-5'
+        className='text-center md:text-left text-5xl md:text-7xl xl:text-9xl font-bold left-heading mt-5'
         >Track Crypto
         </motion.h1>
 

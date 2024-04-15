@@ -8,10 +8,10 @@ import convertNumbers from '@/utils/convertNumbers';
 import { useRouter } from 'next/navigation';
 import {motion} from "framer-motion"
 
-export default function List({coin,compare,delay}) {
+export default function List({coin,delay}) {
   const router = useRouter();
   return (
-    <motion.tr className={`hover:bg-[var(--darkgrey)] rounded-2xl flex justify-between items-center p-2 md:p-6 gap-4 mb-4 w-full ${compare && "bg-[var(--darkgrey)]"}`} onClick={()=>router.push(`/dashboard/${coin.id}`)}
+    <motion.tr className={`dark:hover:bg-[var(--darkgrey)] hover:bg-[#f3f3f3] rounded-2xl flex justify-between items-center p-2 md:p-6 gap-4 w-full`} onClick={()=>router.push(`/dashboard/${coin.id}`)}
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: delay }}>

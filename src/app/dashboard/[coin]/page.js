@@ -48,13 +48,13 @@ export default function Coin({params}) {
     <div className="p-12">
       
       {coinData &&
-    <table className="bg-[var(--darkgrey)] rounded-[1rem] lg:w-[100%] m-auto cursor-pointer">
+    <table className="dark:bg-[var(--darkgrey)] bg-[#f3f3f3] rounded-[1rem] lg:w-[100%] m-auto cursor-pointer mb-4">
       <tbody>
         <List coin={coinData}/>
       </tbody>
     </table>
       }
-      <div className='w-full p-4 bg-[var(--darkgrey)] rounded-[1rem]'>
+      <div className='w-full p-4 dark:bg-[var(--darkgrey)] bg-[#f3f3f3] rounded-[1rem]'>
         <SelectDays days={days} handleDaysChange={handleDaysChange}/>
         <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
         {chartData && <LineChart charData={chartData} priceType={priceType}/>}

@@ -43,7 +43,7 @@ export default function Dashboard() {
   );
 
   return (
-    <div className="w-screen">
+    <div className="max-w-screen">
         <Search search={search} onSearchChange={onSearchChange}/>
         <Tabs coins={search?filteredCoins:paginatedCoins} search={search}/>
         {!search && paginatedCoins.length!=0 && <PaginationComponent pageNo={pageNo} handleChange={handlePageChange}/>}

@@ -19,7 +19,6 @@ export default function AnchorTemporaryDrawer() {
             <div className='w-[40vw] h-[100vh] bg-[var(--black)] flex flex-col gap-4 p-6'>
             <div><Link href={"/"} className='link'>Home</Link></div>
             <div><Link href={"/compare"} className='link'>Compare</Link></div>
-            <div><Link href={"/watchlist"} className='link'>Watchlist</Link></div>
             <div><Link href={"/dashboard"} className='link'>Dashboard</Link></div>
             </div>
           </Drawer>
