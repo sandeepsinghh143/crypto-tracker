@@ -2,32 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+:root{
+  --white:#fff;
+  --black:#111;
+  --blue:#3a80e9;
+  --grey:#888;
+  --darkgrey:#1b1b1b;
+  --green:#61c96f;
+  --red:#f94141;
+}
+html{
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body{
+  margin:0;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+::selection{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.link{
+  color: var(--grey);
+}
+
+.link:hover{
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+.btn{
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 150px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.btn:hover{
+  box-shadow: 5px 5px 10px rgba(58,128,233,0.5);
+  transition: all 0.5s;
+}
+
+.outlined-btn{
+  background-color: var(--black);
+  border: 2px solid var(--blue);
+  color: var(--white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 150px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.outlined-btn:hover{
+  box-shadow: 5px 5px 10px rgba(58,128,233,0.5);
+  transition: all 0.5s;
+  background-color: var(--blue);
+}
+
+.left-heading{
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: var(--white);
+}
+.left-heading:hover{
+  color: var(--black);
+  -webkit-text-stroke-color: var(--white);
+  transition: all 0.3s;
+}
+
+@media screen and (max-width:640px) {
+  .left-heading{
+    -webkit-text-stroke-width: 1px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+img {   
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* td{
+  padding:1.5rem;
+} */
+
+
+td{
+  width:18%;
+}
+
+.coin-info a{
+  text-decoration: underline;
+}
+
+.coin-info a:hover{
+  color: var(--blue);
 }
