@@ -3,16 +3,18 @@ import React from 'react'
 import Button from '../common/Button'
 import { motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
+import { useTheme } from 'next-themes';
 
 export default function LeftMain() {
   const router = useRouter();
+  const {theme} = useTheme();
   return (
     <div>
         <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className='text-center md:text-left text-5xl md:text-7xl xl:text-9xl font-bold left-heading mt-5'
+        className={`text-center md:text-left text-5xl md:text-7xl xl:text-9xl font-bold mt-5 ${theme=="dark" ? "left-heading":"left-heading1"}`}
         >Track Crypto
         </motion.h1>
 

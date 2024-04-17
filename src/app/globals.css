@@ -77,11 +77,21 @@ body{
 
 .left-heading{
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: var(--white);
+  -webkit-text-stroke-color: white;
 }
 .left-heading:hover{
-  color: var(--black);
-  -webkit-text-stroke-color: var(--white);
+  color: black;
+  -webkit-text-stroke-color: white;
+  transition: all 0.3s;
+}
+
+.left-heading1{
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+.left-heading1:hover{
+  color: white;
+  -webkit-text-stroke-color: black;
   transition: all 0.3s;
 }
 
